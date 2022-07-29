@@ -37,33 +37,76 @@
 </head>
 <body>
 <div class="main" id="section1">
-<br>
-<div class="text-center">
-    <h1>Hey, I'm Linus!</h1>
-</div>
-<br>
-<img class="center-image" src="static/images/picture_of_me.jpg" alt="">
-<br>
-<div class="text-center">
-    I' m currently {{ age }} years old & study business informatics at OTH Regensburg.
-</div>
     <br>
-<img class="center-image" src="static/images/oth.png" alt="">
+    <div class="text-center">
+        <h1>Hey, I'm Linus!</h1>
+    </div>
+    <br>
+    <img class="center-image" src="static/images/picture_of_me.jpg" alt="">
+    <br>
+    <div class="text-center">
+        I' m currently {{ age }} years old & study business informatics at OTH Regensburg.
+    </div>
+    <br>
+    <img class="center-image" src="static/images/oth.png" alt="">
     <a href="#section2">Click Me to Smooth Scroll to Section 2 Below</a>
+    <a href="#section3">Click Me to Smooth Scroll to Section 3 Below</a>
 </div>
 
 
 <div class="main" id="section2">
-<br>
-<div class="text-center">
-    I like running, swimming and coding
-</div>
+    <br>
+    <div class="text-center">
+        I like running, swimming and coding
+    </div>
     <div class="text-center">
 
         Check out my <a href="https://github.com/linusschlepp">GitHub</a>
     </div>
 
     <a href="#section1">Click Me to Smooth Scroll to Section 1 Above</a>
+    <a href="#section3">Click Me to Smooth Scroll to Section 3 Below</a>
+</div>
+
+<div class="main" id="section3">
+    <br>
+    <div class="text-center">
+        Still curious?
+    </div>
+    <div class="text-center">
+
+        Then reach out to  me!
+    </div>
+
+    <form action="{{ url_for('contact_me') }}" method="post">
+    <h1>Hallo</h1>
+        <div>
+            <p>
+            {{ form.name.label }} <br>
+            {{ form.name(placeholder='Your name') }}
+                </p>
+            <p>
+                {{ form.email.label }} <br>
+                {{ form.name(placeholder='Enter your mail, so I can get back to you!') }}
+            </p>
+            <p>
+                {{ form.subject.label }} <br>
+                {{ form.subject(placeholder='Your subject') }}
+            </p>
+            <p>
+                {{ form.message.label }} <br>
+                {{ form.message(placeholder='Bla Bla Bla....') }}
+            </p>
+            <p>
+                {{ form.submit}}
+            </p>
+        </div>
+    </form>
+
+
+    <a href="#section1">Click Me to Smooth Scroll to Section 1 Above</a>
+    <a href="#section2">Click Me to Smooth Scroll to Section 2 Above</a>
+
 </div>
 
 </body>
@@ -90,6 +133,11 @@
     #section2 {
         height: 600px;
         background-color: yellow;
+    }
+
+    #section3 {
+        height: 600px;
+        background-color: purple;
     }
 
 
