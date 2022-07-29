@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Linus Schlepp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/output.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="main" id="section1">
+<br>
+<div class="text-center">
+    <h1>Hey, I'm Linus!</h1>
+</div>
+<br>
+<img class="center-image" src="static/images/picture_of_me.jpg" alt="">
+<br>
+<div class="text-center">
+    I' m currently {{ age }} years old & study business informatics at OTH Regensburg.
+</div>
+    <br>
+<img class="center-image" src="static/images/oth.png" alt="">
+    <a href="#section2">Click Me to Smooth Scroll to Section 2 Below</a>
+</div>
+
+
+<div class="main" id="section2">
+<br>
+<div class="text-center">
+    I like running, swimming and coding
+</div>
+    <div class="text-center">
+
+        Check out my <a href="https://github.com/linusschlepp">GitHub</a>
+    </div>
+
+    <a href="#section1">Click Me to Smooth Scroll to Section 1 Above</a>
+</div>
+
+</body>
+
+
+</html>
+
+<style>
+
+    .center-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 20%;
+        height: 20%;
+
+    }
+
+    #section1 {
+        height: 600px;
+        background-color: pink;
+    }
+
+    #section2 {
+        height: 600px;
+        background-color: yellow;
+    }
+
+
+</style>

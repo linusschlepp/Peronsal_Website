@@ -1,0 +1,11 @@
+{
+  "name": "flaskproject3",
+  "scripts": {
+    "watch-css": "npx tailwindcss -i ./static/src/css/input.css -o ./static/dist/css/output.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.1.6"
+  }
+}
