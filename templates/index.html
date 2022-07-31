@@ -39,22 +39,50 @@
 <div class="main" id="section1">
     <br>
     <div class="text-center">
-        <h1>Hey, I'm Linus!</h1>
+        <h2 class="font-medium leading-tight text-4xl mt-0 mb-2">Hey, I'm Linus!</h2>
     </div>
     <hr>
-    <br>
     <img class="center-image" src="static/images/picture_of_me.jpg" alt="">
     <br>
-    <div class="text-center">
-        I' m currently {{ age }} years old & study business informatics at OTH Regensburg.
+    {#    <div class="grid grid-flow-col text-center p-2">#}
+    {#        <div class="shadow-2xl w-56 h-56 bg-purple-600#}
+    {#                    rounded-lg">#}
+    {#                I' m {{ age }} years old & study business informatics at OTH Regensburg.#}
+    {#        </div>#}
+    {#    </div>#}
+    {#    <div class="box-border md:box-content">#}
+    {# I' m {{ age }} years old & study business informatics at OTH Regensburg.#}
+    {#</div>#}
+    {#    <div#}
+    {#         class="transition duration-500 ease-in-out flex py-3 px-2 hover:bg-purple-200 transform hover:-translate-y-1#}
+    {#         hover:scale-110 hover:text-white hover:shadow-none hover:rounded border border-gray-300 shadow-lg text-center">#}
+    {#    <div class="text-center">#}
+    {#         I' m {{ age }} years old & study business informatics at OTH Regensburg.#}
+    {#    </div>#}
+    {#        </div>#}
+    {#      <div class="flex  justify-center h-screen">#}
+    {#	<div class="h-56 grid grid-cols- gap-4 content-center">#}
+    {#	<div>Centered Content</div>#}
+    {#	</div>#}
+    {#  </div>#}
+    {#    <div class="center-object">#}
+    {#      <div class="flex h-screen justify-center h-24">#}
+    {#    <div class="text-center bg-blue-400"> <!-- ⬅️ THIS DIV WILL BE CENTERED -->#}
+    {#        <h1 class="text-3xl">HEADING</h1>#}
+    {#        <p class="text-xl">Sub text</p>#}
+    {#    </div>#}
+    {#  </div>#}
+    {#        </div>#}
+    <div class="box">
+<div class="text-center">
+        I' m {{ age }} years old & study business informatics at OTH Regensburg.
     </div>
+        </div>
     <br>
     <img class="center-image" src="static/images/oth.png" alt="">
-    <a href="#section2">Click Me to Smooth Scroll to Section 2 Below</a>
+    <a href="#section2">Click Me to Smooth Scroll to Section 2 Below</a> <br>
     <a href="#section3">Click Me to Smooth Scroll to Section 3 Below</a>
-    </div>
-
-
+</div>
 <div class="main" id="section2">
     <br>
     <div class="text-center">
@@ -65,7 +93,8 @@
         Check out my <a href="https://github.com/linusschlepp">GitHub</a>
     </div>
 
-    <a href="#section1">Click Me to Smooth Scroll to Section 1 Above</a>
+    {#    <a href="#section1">Click Me to Smooth Scroll to Section 1 Above</a> <br>#}
+    <a href="/test">Click Me to Smooth Scroll to Section 1 Above</a> <br>
     <a href="#section3">Click Me to Smooth Scroll to Section 3 Below</a>
 </div>
 
@@ -76,36 +105,36 @@
     </div>
     <div class="text-center">
 
-        Then reach out to  me!
+        Then reach out to me!
+    </div>
+    <div class="contact">
+        <form action="{{ url_for('contact_me') }}" method="post">
+            <div>
+                <p>
+                    {{ form.name.label }} <br>
+                    {{ form.name(placeholder='Your name') }}
+                </p>
+                <p>
+                    {{ form.email.label }} <br>
+                    {{ form.name(placeholder='Enter your mail, so I can get back to you!') }}
+                </p>
+                <p>
+                    {{ form.subject.label }} <br>
+                    {{ form.subject(placeholder='Your subject') }}
+                </p>
+                <p>
+                    {{ form.message.label }} <br>
+                    {{ form.message(placeholder='Bla Bla Bla....') }}
+                </p>
+                <p>
+                    {{ form.submit }}
+                </p>
+            </div>
+        </form>
     </div>
 
-    <form action="{{ url_for('contact_me') }}" method="post">
-    <h1>Hallo</h1>
-        <div>
-            <p>
-            {{ form.name.label }} <br>
-            {{ form.name(placeholder='Your name') }}
-                </p>
-            <p>
-                {{ form.email.label }} <br>
-                {{ form.name(placeholder='Enter your mail, so I can get back to you!') }}
-            </p>
-            <p>
-                {{ form.subject.label }} <br>
-                {{ form.subject(placeholder='Your subject') }}
-            </p>
-            <p>
-                {{ form.message.label }} <br>
-                {{ form.message(placeholder='Bla Bla Bla....') }}
-            </p>
-            <p>
-                {{ form.submit}}
-            </p>
-        </div>
-    </form>
 
-
-    <a href="#section1">Click Me to Smooth Scroll to Section 1 Above</a>
+    <a href="#section1">Click Me to Smooth Scroll to Section 1 Above</a> <br>
     <a href="#section2">Click Me to Smooth Scroll to Section 2 Above</a>
 
 </div>
@@ -121,29 +150,93 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        {#width: 20%;#}
-        {#height: 20%;#}
         width: 200px;
         height: auto;
+        border: 1px solid #C807FE;
+    {#border-radius: 50%;#}
 
     }
 
+   .contact form {
+    margin-top: 0px;
+    padding: 0px 30px;
+}
+
+.contact h3 {
+    color: #488ace;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+.contact p {
+    margin: 0 0px 10px;
+}
+
+.contact label {
+    display: none;
+}
+
+
     #section1 {
-        height: 600px;
-        background-color: red;
+        height: 100vh;
+    {#background-color: red;#}
 
     }
 
     #section2 {
-        height: 600px;
-        background-color: rebeccapurple;
+        height: 100vh;
+    {#background-color: rebeccapurple;#}
 
     }
 
-    #section3 {
-        height: 600px;
-        background-color: darkolivegreen;
 
+    .box {
+        background-color: lightgrey;
+        width: 300px;
+        padding: 50px;
+        margin: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .box:hover {
+        background-color: #C807FE;
+    }
+
+    #section3 {
+        height: 100vh;
+    {#background-color: darkolivegreen;#}
+
+    }
+
+    hr {
+        color: black;
+        border-top: 1px dotted #C807FE;
+        margin: auto;
+        width: 50%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .contact textarea#message {
+        {#width: 70%;#}
+        height: 122px;
+        border: 1px solid #dddddd78;
+        border-radius: 4px;
+        padding: 10px;
+    }
+
+    .contact input#submit {
+        color: black;
+        background: lightgrey;
+        border: none;
+        border-radius: 4px;
+        padding: 15px 23px;
+        box-shadow: 0px 0px 4px 0px #00000087;
+        margin-top: 15px;
     }
 
 
